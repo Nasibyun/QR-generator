@@ -63,12 +63,27 @@
         </main>
 
         <footer>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/nasib-khan-0123459z786/" target="_blank" aria-label="LinkedIn" >
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/Nasibyun" target="_blank" aria-label="GitHub" >
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:naseebkhan00000786@gmail.com" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
             <p>Made with <i class="fas fa-heart"></i> for the digital world</p>
-            <p class="copyright">© 2025 QR Genius. All rights reserved.</p>
+            <p class="copyright">© <span id="current-year">2023</span> QR Genius. All rights reserved.</p>
         </footer>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.1/build/qrcode.min.js"></script>
     <script src="main.js"></script>
+    <script>
+        // Auto-update copyright year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
