@@ -1,19 +1,74 @@
-<!doctype html>
-<html>
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<title>My static Space</title>
-		<link rel="stylesheet" href="style.css" />
-	</head>
-	<body>
-		<div class="card">
-			<h1>Welcome to your static Space!</h1>
-			<p>You can modify this app directly by editing <i>index.html</i> in the Files and versions tab.</p>
-			<p>
-				Also don't forget to check the
-				<a href="https://huggingface.co/docs/hub/spaces" target="_blank">Spaces documentation</a>.
-			</p>
-		</div>
-	</body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Genius | Premium QR Code Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-qrcode"></i> QR Genius</h1>
+            <p class="subtitle">Transform links into scannable QR codes instantly</p>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <div class="input-group">
+                    <input type="text" id="input" placeholder="Enter URL, text, or contact info..." autofocus>
+                    <button id="generate-btn" onclick="generateQR()">
+                        <i class="fas fa-magic"></i> Generate QR
+                    </button>
+                </div>
+                <div class="options">
+                    <label for="size">Size:</label>
+                    <select id="size">
+                        <option value="150">Small (150x150)</option>
+                        <option value="250" selected>Medium (250x250)</option>
+                        <option value="350">Large (350x350)</option>
+                    </select>
+
+                    <label for="color">Color:</label>
+                    <input type="color" id="color" value="#000000">
+
+                    <label for="bg-color">Background:</label>
+                    <input type="color" id="bg-color" value="#ffffff">
+                </div>
+            </div>
+
+            <div class="result-section" id="result-section">
+                <div class="qr-container">
+                    <div class="qr-placeholder" id="placeholder">
+                        <i class="fas fa-qrcode"></i>
+                        <p>Your QR code will appear here</p>
+                    </div>
+                    <img id="qr" style="display: none;"/>
+                </div>
+                
+                <div class="download-options" id="download-options">
+                    <button id="download-png" onclick="downloadQR('png')">
+                        <i class="fas fa-download"></i> PNG
+                    </button>
+                    <button id="download-jpg" onclick="downloadQR('jpg')">
+                        <i class="fas fa-download"></i> JPG
+                    </button>
+                    <button id="download-svg" onclick="downloadQR('svg')">
+                        <i class="fas fa-download"></i> SVG
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Made with <i class="fas fa-heart"></i> for the digital world</p>
+            <p class="copyright">© 2023 QR Genius. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.1/build/qrcode.min.js"></script>
+    <script src="main.js"></script>
+</body>
 </html>
